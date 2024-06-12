@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import { newsData } from '../newsData.js';
 
 const chunkArray = (array, size) => {
     const chunkedArr = [];
@@ -10,19 +11,21 @@ const chunkArray = (array, size) => {
 };
 
 const Gallery = () => {
-    const [news, setNews] = useState([]);
 
-    useEffect(() => {
-        axios.get('/api/news', {
-            params: {limit: 12}
-        })
-            .then(response => {
-                setNews(response.data);
-            })
-            .catch(error => {
-                console.error("There was an error fetching the news!", error);
-            });
-    }, []);
+    // const [news, setNews] = useState([]);
+
+    // useEffect(() => {
+    //     axios.get('/api/news', {
+    //         params: {limit: 12}
+    //     })
+    //         .then(response => {
+    //             setNews(response.data);
+    //         })
+    //         .catch(error => {
+    //             console.error("There was an error fetching the news!", error);
+    //         });
+    // }, []);
+    const news = newsData.slice(0, 12);
 
     const columns = chunkArray(news, 3);
 
