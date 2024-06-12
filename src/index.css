@@ -1,13 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Стиль для WebKit-браузерів (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Ширина скролбару */
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Колір фону скролбару */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5850ec; /* Колір ползунка */
+    border-radius: 10px; /* Закруглені краї ползунка */
+    border: 3px solid #f0f0f0; /* Простір між ползунком і фоном */
+}
+
+/* Стиль для Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #5850ec #f0f0f0;
+}
+
+/* Опціонально: стиль для інших елементів скролу */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #5850ec #f0f0f0;
+}
+
+/*swiper*/
+.swiper {
+    width: 100%;
+    padding-bottom: 50px !important;
+}
+:root {
+    --swiper-theme-color: #5850ec !important;
+}
+.swiper-pagination-bullet {
+    background-color:  #5850ec !important;
 }
